@@ -24,8 +24,12 @@
       <h3>Filtering Arrays</h3>
       <!-- Activity 7: Render a list containing authors born after 1850. Hint: Make use of the v-for directive to iterate through the array of authors that you have filtered out. -->
       <ul>
-        <li v-for="author in modernAuthors" :key="author.id">
-        {{ author.name }} ({{ author.birthYear }})
+        <li
+          v-for="author in modernAuthors"
+          :key="author.id"
+          :class="{ highlight: author.name === 'George Orwell' }"
+        >
+          {{ author.name }} ({{ author.birthYear }})
         </li>
       </ul>
       <p>Authors born after 1850:</p>
